@@ -146,8 +146,8 @@ const help = (prefix) => {
     ║║ 
     ║╠➣ Instagram 
     ║║  OFF
-    ║╠➣ Creator BRUXINHO MOS
-    ║║ Wa.me/+56945020187
+    ║╠➣ Creator BRUXINHO MODS
+    ║║ Wa.me/+51924318593
     ║║ 
     ║╰─────────────────
     ┗━┅┅┄┄⟞⟦ ARR157 BOT⟧⟝┄┄┉┉━┛
