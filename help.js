@@ -27,7 +27,7 @@ const help = (prefix) => {
     ║╠➣ *${prefix}tts*
     ║╠➣ *${prefix}toimg*
     ║╠➣ *${prefix}phlogo*
-    ║╠➣ *${refix}quotemaker*
+    ║╠➣ *${prefix}quotemaker*
     ║╠➣ *${prefix}ninjalogo*
     ║╠➣ *${prefix}glitch*
     ║╠➣ *${prefix}text3d*
@@ -137,7 +137,7 @@ const help = (prefix) => {
 
 `
 }
-exports.help = help
+exports.help = help 
 
 
 
