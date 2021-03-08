@@ -33,7 +33,7 @@ const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' 
             + 'FN:Dono isaque\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=55:+55 759-9887-6451\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=5575998876451:+55 75998876451\n' 
             + 'END:VCARD' 
 prefix = '!'
 blocked = []          
@@ -167,7 +167,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["5575998876451@s.whatsapp.net"] 
+			const ownerNumber = ["557598876451@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
