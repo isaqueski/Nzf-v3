@@ -31,9 +31,9 @@ const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const samih = JSON.parse(fs.readFileSync('./src/simi.json'))
 const vcard = 'BEGIN:VCARD\n' 
             + 'VERSION:3.0\n' 
-            + 'FN:Affis Admin\n' 
+            + 'FN:Dono isaque\n' 
             + 'ORG: Pengembang XBot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=6282334297175:+62 823-3429-7175\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=55:+55 759-9887-6451\n' 
             + 'END:VCARD' 
 prefix = '!'
 blocked = []          
@@ -48,7 +48,7 @@ const bulan = arrayBulan[moment().format('MM') - 1]
 const config = {
     XBOT: '❉AmpibI❉', 
     instagram: 'https://instagram.com/bot_figurinhas_', 
-    nomer: 'wa.me/6282334297175',
+    nomer: 'wa.me/5575998876451',
     youtube: 'https://youtube.com/channel', 
     whatsapp: 'Comming soon', 
     tanggal: `TANGGAL: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
@@ -154,8 +154,8 @@ client.on('group-participants-update', async (anu) => {
 				wait: '❬❗❭ AGUARDE UM POUCO Meu Amigo',
 				success: '️❬ ✔ ❭ SUCESSO 🖤',
 				error: {
-					stick: 'Yah gagal ;(, coba ulangi ^_^',
-					Iv: 'PUTS LINK INVÁLIDO☹️'
+					stick: '❬❗❭ Falhou tente novamente ',
+					Iv: '❬❗❭ PUTS LINK INVÁLIDO☹️'
 				},
 				only: {
 					group: '❬❗❭ SÓ GRUPO ',
@@ -167,7 +167,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["75998876451@s.whatsapp.net"] 
+			const ownerNumber = ["5575998876451@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -390,15 +390,15 @@ client.on('group-participants-update', async (anu) => {
 					break
                 case 'bug':
                      const pesan = body.slice(5)
-                      if (pesan.length > 300) return client.sendMessage(from, 'Maaf Teks Terlalu Panjang, Maksimal 300 Teks', msgType.text, {quoted: mek})
+                      if (pesan.length > 300) return client.sendMessage(from, 'simplifique o seu reporte limite de 300 linhas', msgType.text, {quoted: mek})
                         var nomor = mek.participant
                        const teks1 = `*[REPORT]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${pesan}`
                       var options = {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('75998876451@s.whatsapp.net', options, text, {quoted: mek})
-                    reply('Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.')
+                    client.sendMessage('5575998876451@s.whatsapp.net', options, text, {quoted: mek})
+                    reply('Problemas foram relatados ao proprietário do BOT, relatórios falsos não serão respondidos.')
                     break
                 case 'ssweb':
 					if (args.length < 1) return reply('Urlnya mana om')
@@ -642,7 +642,7 @@ client.on('group-participants-update', async (anu) => {
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`(◇)Deu erro tente novamente`)
+								reply(`❬❗❭ Deu erro tente novamente`)
 							})
 							.on('end', function () {
 								console.log('Finish')
@@ -769,13 +769,13 @@ client.on('group-participants-update', async (anu) => {
 					mentions(teks, members_id, true)
 					break
 				case 'clearall':
-					if (!isOwner) return reply(' *LU SIAPA* ?')
+					if (!isOwner) return reply(' *você é quem na fila do pão* ?')
 					anu = await client.chats.all()
 					client.setMaxListeners(25)
 					for (let _ of anu) {
 						client.deleteChat(_.jid)
 					}
-					reply('limpar todos os 𝘀𝘂𝗸𝘀𝗲𝘀 𝘆𝗮𝗵  :)')
+					reply('limpar todos os lixo')
 					break
 			       case 'block':
 					if (!isGroup) return reply(mess.only.group)
@@ -795,7 +795,7 @@ client.on('group-participants-update', async (anu) => {
 				await client.client.leaveGroup(from, 'Tchau', groupId)
                     break
 				case 'bc': 
-					if (!isOwner) return reply(' *LU SIAPA* ?') 
+					if (!isOwner) return reply(' *você é quem na fila do pão* ?') 
 					if (args.length < 1) return reply('.......')
 					anu = await client.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
@@ -851,8 +851,8 @@ client.on('group-participants-update', async (anu) => {
             case 'admin':
             case 'owner':
             case 'creator':
-                  client.sendMessage(from, {displayname: "Jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-       client.sendMessage(from, 'Tuh nomer owner ku >_<, jangan spam atau ku block kamu',MessageType.text, { quoted: mek} )
+                  client.sendMessage(from, {displayname: "isaque", vcard: vcard}, MessageType.contact, { quoted: mek})
+       client.sendMessage(from, 'Este é o número do meu proprietário não envie spam ou bloqueie você',MessageType.text, { quoted: mek} )
            break    
            case 'setname':
                 if (!isGroup) return reply(mess.only.group)
@@ -896,13 +896,13 @@ client.on('group-participants-update', async (anu) => {
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `parabens por se tornar o adm do grp (+_+) :\n`
+							teks += `parabens por se tornar o adm do grp :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					} else {
-						mentions(`Parabens🥳 @${mentioned[0].split('@')[0]} voce foi promovido para adm do grp (+_+)`, mentioned, true)
+						mentions(`Parabens🥳 @${mentioned[0].split('@')[0]} voce foi promovido para adm do grp `, mentioned, true)
 						client.groupMakeAdmin(from, mentioned)
 					}
 					break	
@@ -927,7 +927,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 				case 'listadmin':
 					if (!isGroup) return reply(mess.only.group)
-					teks = `Lista 𝗮𝗱𝗺𝗶𝗻 𝗼𝗳 𝗴𝗿𝘂𝗽o *${groupMetadata.subject}*\n𝗧𝗼𝘁𝗮𝗹 : ${groupAdmins.length}\n\n`
+					teks = `Lista de 𝗮𝗱𝗺𝗶𝗻 𝗼𝗳 𝗴𝗿𝘂𝗽o *${groupMetadata.subject}*\n𝗧𝗼𝘁𝗮𝗹 : ${groupAdmins.length}\n\n`
 					no = 0
 					for (let admon of groupAdmins) {
 						no += 1
