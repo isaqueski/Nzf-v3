@@ -47,9 +47,9 @@ const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Jul
 const bulan = arrayBulan[moment().format('MM') - 1]
 const config = {
     XBOT: '❉AmpibI❉', 
-    instagram: 'https://instagram.com/affis_saputro123', 
+    instagram: 'https://instagram.com/bot_figurinhas_', 
     nomer: 'wa.me/6282334297175',
-    youtube: 'https://youtube.com/channel/UCGYLWtyT9IADYNUiK0uZiGg', 
+    youtube: 'https://youtube.com/channel', 
     whatsapp: 'Comming soon', 
     tanggal: `TANGGAL: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
     waktu: time
@@ -151,7 +151,7 @@ client.on('group-participants-update', async (anu) => {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '❬❗❭ AGUARDE UM POUCO MAN',
+				wait: '❬❗❭ AGUARDE UM POUCO Meu Amigo',
 				success: '️❬ ✔ ❭ SUCESSO 🖤',
 				error: {
 					stick: 'Yah gagal ;(, coba ulangi ^_^',
@@ -167,7 +167,7 @@ client.on('group-participants-update', async (anu) => {
 			}
 
 			const botNumber = client.user.jid
-			const ownerNumber = ["6282334297175@s.whatsapp.net"] 
+			const ownerNumber = ["75998876451@s.whatsapp.net"] 
 			const isGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
@@ -397,7 +397,7 @@ client.on('group-participants-update', async (anu) => {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
-                    client.sendMessage('6282334297175@s.whatsapp.net', options, text, {quoted: mek})
+                    client.sendMessage('75998876451@s.whatsapp.net', options, text, {quoted: mek})
                     reply('Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.')
                     break
                 case 'ssweb':
@@ -642,7 +642,7 @@ client.on('group-participants-update', async (anu) => {
 								console.log(`Error : ${err}`)
 								fs.unlinkSync(media)
 								tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-								reply(`Yah gagal ;(, coba ulangi ^_^`)
+								reply(`(◇)Deu erro tente novamente`)
 							})
 							.on('end', function () {
 								console.log('Finish')
@@ -655,7 +655,7 @@ client.on('group-participants-update', async (anu) => {
 							.toFormat('webp')
 							.save(ran)
 					} else {
-						reply(`Kirim gambar dengan caption ${prefix}sticker atau reply/tag gambar`)
+						reply(`Envie a imagem com a legenda ${prefix}sticker ou marque a foto e use ${prefix}sticker`)
 					}
 					break
 				case 'getses':
@@ -945,7 +945,7 @@ client.on('group-participants-update', async (anu) => {
 						fs.unlinkSync(media)
 						if (err) return reply('Yah gagal ;(, coba ulangi ^_^')
 						buffer = fs.readFileSync(ran)
-						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'ACABOU '})
+						client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Feito! '})
 						fs.unlinkSync(ran)
 					})
 					break
